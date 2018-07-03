@@ -21,6 +21,7 @@ class Application
       end
     end
     elsif req.path.match(/add/)
+      binding.pry
       search_term = req.params["q"]
       if @@items.include?(search_term)
         @@cart << search_term
