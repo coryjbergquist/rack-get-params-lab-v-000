@@ -19,6 +19,8 @@ class Application
       search_term = req.params["q"]
       if @@items.include?(search_term)
         @@cart << search_term
+      else
+        resp.write "Couldn't find #{search_term}"
     elsif req.path.match(/search/)
       search_term = req.params["q"]
       resp.write handle_search(search_term)
