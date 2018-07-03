@@ -25,6 +25,7 @@ class Application
       if @@items.include?(search_term)
         @@cart << search_term
       else
+        binding.pry
         resp.write "Couldn't find #{search_term}"
       end
     elsif req.path.match(/search/)
