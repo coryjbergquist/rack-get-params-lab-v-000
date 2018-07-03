@@ -22,7 +22,6 @@ class Application
     elsif req.path.match(/add/)
       search_term = req.params["q"]
       if @@items.include?(search_term)
-        binding.pry
         @@cart << search_term
       else
         resp.write "Couldn't find #{search_term}"
